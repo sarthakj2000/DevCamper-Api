@@ -10,7 +10,7 @@ const CourseSchema = new mongoose.Schema({
     required: [true, 'Please add a description'],
   },
   weeks: {
-    type: Number,
+    type: String,
     required: [true, 'Please add number of weeks'],
   },
   tuition: {
@@ -33,6 +33,11 @@ const CourseSchema = new mongoose.Schema({
   bootcamp: {
     type: mongoose.Schema.ObjectId,
     ref: 'Bootcamp',
+    required: true,
+  },
+  user: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
     required: true,
   },
 });
